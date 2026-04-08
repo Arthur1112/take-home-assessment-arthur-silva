@@ -1,7 +1,9 @@
+import type { Text } from "./Accordion";
+
 interface AccordionItemProps {
   index: number;
-  content: string;
-  trigger: string;
+  content: Text;
+  trigger: Text;
   isOpen: boolean;
 }
 
