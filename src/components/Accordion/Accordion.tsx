@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { AccordionItem } from "./AccordionItem";
 
 export interface Text {
@@ -23,9 +24,22 @@ export const Accordion = ({
   items,
   shouldAllowMultipleExpanded = true,
 }: AccordionProps) => {
+  const [openItems, setOpenItems] = useState(
+    items.map((item) => item.open ?? false),
+  );
+
+  const itemClicked = (index: number) => {
+    setOpenItems(
+      openItems.map((stat, x) => {
+        if (x === index) return !stat;
+        return stat;
+      }),
+    );
+    console.log("----->", openItems);
+  };
+
   return (
     <div>
-      <AccordionItem />
       {items &&
         items.map((item, index) => (
           <AccordionItem
@@ -33,7 +47,8 @@ export const Accordion = ({
             index={index}
             content={item.content}
             trigger={item.trigger}
-            isOpen={item.open}
+            isOpen={openItems[index]}
+            onOpen={itemClicked}
           />
         ))}
     </div>

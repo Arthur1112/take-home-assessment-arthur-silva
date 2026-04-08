@@ -5,6 +5,7 @@ interface AccordionItemProps {
   content: Text;
   trigger: Text;
   isOpen: boolean;
+  onOpen: (index: number) => void;
 }
 
 export const AccordionItem = ({
@@ -12,6 +13,24 @@ export const AccordionItem = ({
   content,
   trigger,
   isOpen,
+  onOpen,
 }: AccordionItemProps) => {
-  return <h1>Hey not this is accordionItem</h1>;
+  const TriggerElement = trigger.primitive ?? "p";
+  const ContentElement = content.primitive ?? "p";
+  return (
+    <div>
+      <button onClick={() => onOpen(index)}>
+        <TriggerElement className={trigger.className}>
+          {trigger.body}
+        </TriggerElement>
+      </button>
+      <div>
+        <div>
+          <ContentElement className={content.className}>
+            {isOpen ? content.body : null}
+          </ContentElement>
+        </div>
+      </div>
+    </div>
+  );
 };
