@@ -47,3 +47,20 @@ open on initial render by passing `open: true` on the item.
 
 * Accessibility UI : Current styling is minimal, final component would need to go further, sufficient colors across all states (default, hover, focus, disabled), and visible focus ring that meets regulations.
 
+ ## Test Results
+
+```
+✓ Accordion (7)
+     ✓ renders accordion with multiple panels 51ms
+     ✓ shows content for the clicked panel and hides the rest 26ms
+     ✓ hides content when an expanded panel is clicked again 25ms
+     ✓ can expand multiple panels at the same time by default 29ms
+     ✓ when shouldAllowMultipleExpanded is false (1)
+       ✓ only one panel is visible at a time 23ms
+     ✓ accessibility (2)
+       ✓ each button has aria-controls pointing to its content region 8ms
+       ✓ content regions have aria-labelledby pointing back to their header 2ms
+
+ Test Files  1 passed (1)
+      Tests  7 passed (7)
+```
