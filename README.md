@@ -25,4 +25,4 @@ https://github.com/user-attachments/assets/da88ec2a-9b48-4b1d-b9e3-88341c538507
 
 * UI : I would update the UI to have a more modern look and Feel. This would would be just cosmetics. I would also have added multiple varients of the component, which could be toggled on StoryBook. 
 
-* Performance : There is an issue with the Storybook automatic documentaion feature, I beleive because of a package missing. But this would be usefull so all users of the Storybook can see exsctly how to use each components. 
+* Performance : There is an issue with the Storybook automatic documentaion feature, I think it is because of a package missing. But this would be usefull so all users of the Storybook can see exsctly how to use each components. 
