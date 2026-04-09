@@ -28,10 +28,13 @@ export const Accordion = ({
     items.map((item) => item.open ?? false),
   );
 
+  console.log("----->", openItems);
+
   const itemClicked = (index: number) => {
     setOpenItems(
       openItems.map((stat, x) => {
         if (x === index) return !stat;
+        else if (!shouldAllowMultipleExpanded) return false;
         return stat;
       }),
     );
