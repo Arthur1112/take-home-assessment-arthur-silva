@@ -19,7 +19,10 @@ const itemSample = [
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <h1>Hey now this is a test assessment</h1>
+    <h3>Normal Accordion</h3>
     <Accordion items={itemSample} />
+
+    <h3>Accordion with "shouldAllowMultipleExpanded" false</h3>
+    <Accordion items={itemSample} shouldAllowMultipleExpanded={false} />
   </StrictMode>,
 );
