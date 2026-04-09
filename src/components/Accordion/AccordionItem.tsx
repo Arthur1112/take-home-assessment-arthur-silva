@@ -27,6 +27,7 @@ export const AccordionItem = ({
     iconStyles.push(styles["open"]);
     itemWrapperStyles.push(styles["open"]);
   }
+  //Using the above method is a way I do it in component libraries becuase I find it easier when there are components with a lot of props, like different varients etc....
 
   console.log("======>", iconStyles);
 
