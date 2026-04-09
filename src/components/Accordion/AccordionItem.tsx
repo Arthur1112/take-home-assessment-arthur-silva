@@ -1,4 +1,6 @@
+import { ChevronDown } from "lucide-react";
 import type { Text } from "./Accordion";
+import styles from "./AccordionItem.module.scss";
 
 interface AccordionItemProps {
   index: number;
@@ -17,15 +19,31 @@ export const AccordionItem = ({
 }: AccordionItemProps) => {
   const TriggerElement = trigger.primitive ?? "p";
   const ContentElement = content.primitive ?? "p";
+
+  const iconStyles = [styles.triggerIcon];
+  const itemWrapperStyles = [styles.itemWrapper];
+
+  if (isOpen) {
+    iconStyles.push(styles["open"]);
+    itemWrapperStyles.push(styles["open"]);
+  }
+
+  console.log("======>", iconStyles);
+
   return (
-    <div>
-      <button onClick={() => onOpen(index)}>
+    <div className={styles.accordionItem}>
+      <button onClick={() => onOpen(index)} className={styles.triggerBtn}>
         <TriggerElement className={trigger.className}>
           {trigger.body}
         </TriggerElement>
+        <ChevronDown
+          className={iconStyles.join(" ")}
+          size={18}
+          aria-hidden="true"
+        />
       </button>
-      <div>
-        <div>
+      <div className={itemWrapperStyles.join(" ")}>
+        <div className={styles.itemContainer}>
           <ContentElement className={content.className}>
             {isOpen ? content.body : null}
           </ContentElement>

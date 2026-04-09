@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AccordionItem } from "./AccordionItem";
+import styles from "./Accordion.module.scss";
 
 export interface Text {
   body: string;
@@ -42,7 +43,7 @@ export const Accordion = ({
   };
 
   return (
-    <div>
+    <div className={styles.accordion}>
       {items &&
         items.map((item, index) => (
           <AccordionItem
