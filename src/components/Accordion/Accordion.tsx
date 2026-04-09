@@ -5,6 +5,7 @@ import styles from "./Accordion.module.scss";
 export interface Text {
   body: string;
   primitive?: "p" | "h1";
+  // Ideally this would have all other HTML elements that would be appropriate, like "span" etc....
   className?: string;
 }
 //This Text is how I used to do it at a previous role where we had our own reusabled comp library. It would have more props like "size" and "type" etc...
