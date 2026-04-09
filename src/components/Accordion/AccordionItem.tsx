@@ -32,7 +32,13 @@ export const AccordionItem = ({
 
   return (
     <div className={styles.accordionItem}>
-      <button onClick={() => onOpen(index)} className={styles.triggerBtn}>
+      <button
+        id={`accordion-trigger-${index}`}
+        aria-expanded={isOpen}
+        aria-controls={`accordion-content-${index}`}
+        onClick={() => onOpen(index)}
+        className={styles.triggerBtn}
+      >
         <TriggerElement className={trigger.className}>
           {trigger.body}
         </TriggerElement>
@@ -42,7 +48,12 @@ export const AccordionItem = ({
           aria-hidden="true"
         />
       </button>
-      <div className={itemWrapperStyles.join(" ")}>
+      <div
+        className={itemWrapperStyles.join(" ")}
+        id={`accordion-content-${index}`}
+        aria-labelledby={`accordion-trigger-${index}`}
+        role="region"
+      >
         <div className={styles.itemContainer}>
           <ContentElement className={content.className}>
             {isOpen ? content.body : null}
