@@ -8,7 +8,7 @@ export interface Text {
   className?: string;
 }
 //This Text is how I used to do it at a previous role where we had our own reusabled comp library. It would have more props like "size" and "type" etc...
-// Normally this would come from its own component where it is more developed
+// Normally this would come from its own "Text" component
 
 export interface AccordionItem {
   trigger: Text;
