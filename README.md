@@ -35,6 +35,20 @@ The `Accordion` component manages its own state and supports both single
 and multi-expand modes. Each accordion item can also be set
 open on initial render by passing `open: true` on the item.
 
+## Usage
+
+```tsx
+import { Accordion } from "./components/Accordion/Accordion";
+
+<Accordion
+  items={[
+    { trigger: { body: 'Section 1' }, content: { body: 'Content for section 1' } },
+    { trigger: { body: 'Section 2' }, content: { body: 'Content for section 2' } },
+  ]}
+  shouldAllowMultipleExpanded={false}
+/>
+```
+
 ## Future improvements:
 
 * UI : Update the UI to have a more modern look and Feel. This would would be just cosmetics. Also have added multiple varients of the component, which could be toggled on StoryBook. 
@@ -46,6 +60,8 @@ open on initial render by passing `open: true` on the item.
 * Folder structure : `AccordionItem` would move into its own subfolder, and a `components/common` directory would house shared components like `Text` and `Icon` as the library grows
 
 * Accessibility UI : Current styling is minimal, final component would need to go further, sufficient colors across all states (default, hover, focus, disabled), and visible focus ring that meets regulations.
+
+* Documentation: Update the README and Storybook documentation to showcase the props for the Accordion, and AccordionItem components.
 
  ## Test Results
 
